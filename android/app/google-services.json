@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "974648698523",
+    "project_id": "travel-9a335",
+    "storage_bucket": "travel-9a335.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974648698523:android:9f48658c51f5e2e730c83e",
+        "android_client_info": {
+          "package_name": "com.example.flutter.application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2zx8gODCixBl_CI_fJO1LVHU5W1N_WB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974648698523:android:efaf4a0535e3eca230c83e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2zx8gODCixBl_CI_fJO1LVHU5W1N_WB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

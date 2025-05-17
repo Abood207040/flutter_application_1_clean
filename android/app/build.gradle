@@ -1,0 +1,41 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android" // Kotlin plugin
+    id 'com.google.gms.google-services' // Google services plugin for Firebase
+    id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle plugin
+}
+
+android {
+    namespace = "com.example.flutter_application_1" // Ensure this matches your package name
+    compileSdk = flutter.compileSdkVersion // Uses Flutter's compile SDK version
+    ndkVersion = flutter.ndkVersion // Optional: specify NDK version if needed
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8 // Use Java 8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8 // Use JVM target 1.8 for Kotlin
+    }
+
+    defaultConfig {
+        applicationId = "com.example.flutter_application_1" // Unique Application ID
+        minSdkVersion 23 // Set the minimum SDK version to 23
+        targetSdk = flutter.targetSdkVersion // Target SDK version
+        versionCode = flutter.versionCode // Version code
+        versionName = flutter.versionName // Version name
+    }
+
+    buildTypes {
+        release {
+            // Signing config for release builds (update with your own if needed)
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+// This section specifies where to find the Flutter source code
+flutter {
+    source = "../.." // Adjust this path if needed
+}

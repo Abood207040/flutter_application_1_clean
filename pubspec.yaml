@@ -1,0 +1,43 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_credit_card: ^3.0.4
+  cupertino_icons: ^1.0.8
+  firebase_core: ^3.8.0
+  cloud_firestore: ^5.5.0
+  firebase_storage: ^12.3.6
+  firebase_messaging: ^15.1.5
+  firebase_auth: ^5.3.3
+  google_sign_in: ^6.2.2
+  flutter_tawkto: ^0.0.4
+  http: ^1.2.2   # تم تحديث النسخة هنا
+  dio: ^5.1.0
+  google_generative_ai: ^0.4.6
+  intl: ^0.20.1
+  fl_chart: ^0.69.2
+  provider:
+  mockito: ^5.4.0
+
+
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/filedatacost/filtered_travel_dataset.json

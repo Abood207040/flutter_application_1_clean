@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default notification channel ID used for Firebase messaging -->
+    <string name="default_notification_channel_id">flutter_default_channel</string>
+
+    <!-- You can add other string resources for your app here -->
+    <string name="app_name">Flutter Application 1</string>
+</resources>
