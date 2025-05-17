@@ -1,43 +1,58 @@
+// payment_strategy.dart
 
 abstract class PaymentStrategy {
-  Future<void> pay(double amount, Map<String, dynamic> bookingData, Function onSuccess, Function onError);
+  /// Returns a map of payment details for storage or processing.
+  Map<String, dynamic> getPaymentData(double amount);
 }
 
+/// Strategy for Credit Card and Visa payments.
 class CreditCardPayment implements PaymentStrategy {
+  final String cardNumber;
+  final String expiryDate;
+  final String cardHolderName;
+  final String cvvCode;
+
+  CreditCardPayment({
+    required this.cardNumber,
+    required this.expiryDate,
+    required this.cardHolderName,
+    required this.cvvCode,
+  });
+
   @override
-  Future<void> pay(double amount, Map<String, dynamic> bookingData, Function onSuccess, Function onError) async {
-    try {
-      print("💳 Processing credit card payment: \$${amount}");
-      await Future.delayed(Duration(seconds: 1));
-      onSuccess();
-    } catch (e) {
-      onError(e);
-    }
+  Map<String, dynamic> getPaymentData(double amount) {
+    return {
+      'method': 'Credit Card',
+      'cardNumber': cardNumber,
+      'expiryDate': expiryDate,
+      'cardHolderName': cardHolderName,
+      'cvvCode': cvvCode,
+      'totalCost': amount,
+      'paymentDate': DateTime.now(),
+      'paymentStatus': true,
+    };
   }
 }
 
-class VisaPayment implements PaymentStrategy {
-  @override
-  Future<void> pay(double amount, Map<String, dynamic> bookingData, Function onSuccess, Function onError) async {
-    try {
-      print("💳 Processing VISA payment: \$${amount}");
-      await Future.delayed(Duration(seconds: 1));
-      onSuccess();
-    } catch (e) {
-      onError(e);
-    }
-  }
-}
-
+/// Strategy for PayPal payments.
 class PayPalPayment implements PaymentStrategy {
+  final String email;
+  final String password;
+
+  PayPalPayment({
+    required this.email,
+    required this.password,
+  });
+
   @override
-  Future<void> pay(double amount, Map<String, dynamic> bookingData, Function onSuccess, Function onError) async {
-    try {
-      print("💲 Processing PayPal payment: \$${amount}");
-      await Future.delayed(Duration(seconds: 1));
-      onSuccess();
-    } catch (e) {
-      onError(e);
-    }
+  Map<String, dynamic> getPaymentData(double amount) {
+    return {
+      'method': 'PayPal',
+      'paypalEmail': email,
+      'paypalPassword': password, // ⚠️ avoid saving plain text passwords
+      'totalCost': amount,
+      'paymentDate': DateTime.now(),
+      'paymentStatus': true,
+    };
   }
 }

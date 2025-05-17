@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
-      home:SignInScreen(),
+      home:PaymentPage(totalCost: 55, bookingData: {'date': '5/8/2022'}), // Example usage
     );
   }
 }
